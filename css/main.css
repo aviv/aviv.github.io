@@ -149,6 +149,10 @@ a:v#containerd { color: #000; }
   float:right;
 }
 
+.header a {
+  text-decoration:none;
+}
+
 .header h1.title a {
   color: #a00;
 }
