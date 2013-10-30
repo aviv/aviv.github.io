@@ -2,3 +2,4 @@ name: Echoes and Turnings
 markdown: redcarpet
 pygments: true
 excerpt_separator: "\n"
+permalink: /:year/:month-:day-:title.html
