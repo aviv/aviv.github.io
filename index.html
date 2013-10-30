@@ -4,10 +4,17 @@ layout: default
 
 <ul class="posts">
   {% for post in site.posts %}
-    <li onclick='goto("{{ post.url }}")' name='{{ post.id }}' id='{{ post.id }}'>
+    <li name='{{ post.id }}' id='{{ post.id }}'>
       <div class='pheader'>
-        <h2 class='title'>{{ post.title }}</h2>
-        <div class='date'>{{ post.date | date: "%m/%d/%y"}}</div>
+        <a href='{{ post.url }}'><h2 class='title'>{{ post.title }}</h2></a>
+        <div class='date'>
+          {{ post.date | date: "%m/%d/%y"}}
+          <!-- <a class='hyper' id='{{ post.id }}-plink' href='javascript:void()' onclick="showpopup('{{ post.id }}')">></a> -->
+          <div class='popup' id='{{ post.id }}-popup'>
+            <a href='#'>Permalink</a>
+            <a href='#'>Feedback</a>
+          </div>
+        </div>
       </div>
       <div class='content'>{{ post.content }}</div></li>
   {% endfor %}
