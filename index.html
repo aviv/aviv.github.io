@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<ul class="posts">
+  {% for post in site.posts %}
+    <li onclick='goto("{{ post.url }}")'>
+      <div class='pheader'>
+        <h2 class='title'>{{ post.title }}</h2>
+        <div class='date'>{{ post.date | date: "%m/%d/%y"}}</div>
+      </div>
+      <div class='content'>{{ post.content }}</div></li>
+  {% endfor %}
+</ul>

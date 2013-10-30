@@ -1,0 +1,4 @@
+name: Floetry
+markdown: redcarpet
+pygments: true
+excerpt_separator: "\n"
