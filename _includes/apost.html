@@ -1,0 +1,15 @@
+<!-- fuck yeah -->
+<div class='pheader'>
+  <a href='{{ post.url }}'><h2 class='title'>{{ post.title }}</h2></a>
+  <div class='date'>
+    {{ post.date | date: "%m/%d/%y"}}
+    <!-- <a class='hyper' id='{{ post.id }}-plink' href='javascript:void()' onclick="showpopup('{{ post.id }}')">></a> -->
+    <div class='popup' id='{{ post.id }}-popup'>
+      <a href='#'>Permalink</a>
+      <a href='#'>Feedback</a>
+    </div>
+  </div>
+</div>
+<div class='content'>
+  {{ post.content }}
+  </div>
