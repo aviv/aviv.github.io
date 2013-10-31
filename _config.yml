@@ -1,5 +1,6 @@
 name: Echoes and Turnings
 markdown: redcarpet
+textile_ext: text
 pygments: true
 excerpt_separator: "\n"
 permalink: /:year/:month-:day-:title.html

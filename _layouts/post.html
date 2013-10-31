@@ -6,7 +6,7 @@ layout: default
     <div class='date'>{{ page.date | date: "%m/%d/%y"}}</div>
     <h2 class='title'>{{ page.title }}</h2>
   </div>
-  <div class='content'>{{ content }}</div>
+  <div class='content'>{{ content | replace:'  ','&nbsp;&nbsp;' }}</div>
 </div>
 <div class='pagenav'>
   <div class='left'>
