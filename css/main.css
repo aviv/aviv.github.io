@@ -268,10 +268,14 @@ a:v#containerd { color: #000; }
 /*****************************************************************************/
 
 .post {
-  font-family: "Times New Roman", Georgia, serif;
-  font-size:24px;
+  font-family: Courier, Georgia, serif;
+  font-size:20px;
   line-height:1.3em;
   margin-bottom:20px;
+}
+
+.post .date {
+  font-size:70%;
 }
 
 .post p {
