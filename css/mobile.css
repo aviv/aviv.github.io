@@ -1,9 +1,0 @@
-html, body {
-  padding:px;
-  margin:0px;
-}
-
-#container {margin:0px; padding:0px; width:auto;}
-
-.header {text-align:center;}
-.header, .header h1, .header h2 {float:none; margin:0px; padding:0px;}
