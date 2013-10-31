@@ -15,10 +15,10 @@ html, body { height: 100%; }
 body {
   background-color: #536160;
   color:#ddd;
-  font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+  font-family: Monaco, Courier, monospace;
 }
 
-h1, h2, h3, h4, h5, h6 {font-size: 100%;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%; font-family: Verdana, "Bitstream Vera Sans", sans-serif;}
 
 h1 {
   padding-bottom: 1em; 
@@ -109,7 +109,7 @@ a:hover   { color: #fff; }
 
 .posts li {
   line-height:1.4em;
-  font-size:13px;
+  font-size:14px;
   margin:20px 0px 30px 0px;
 }
 
@@ -123,6 +123,7 @@ a:hover   { color: #fff; }
 }
 
 .title {
+  font-size:110%;
   padding-right:20px;
   float:left;
 }
@@ -187,14 +188,17 @@ a:hover   { color: #fff; }
 /*****************************************************************************/
 
 .post {
-  font-family: Courier, Georgia, serif;
-  font-size:20px;
+  font-size:18px;
   line-height:1.3em;
 }
 
 .post h2 {
   font-weight:bold;
   font-size:120%;
+}
+
+.post .content {
+  padding-top:5px;
 }
 
 .post .date {
