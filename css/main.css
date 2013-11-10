@@ -16,6 +16,7 @@ body {
   background-color: #536160;
   color:#ddd;
   font-family: Monaco, Courier, monospace;
+  padding-bottom:50px;
 }
 
 h1, h2, h3, h4, h5, h6 {font-size: 100%; font-family: Verdana, "Bitstream Vera Sans", sans-serif;}
@@ -94,8 +95,8 @@ a:hover   { color: #fff; }
 .pagenav .left a {padding:14px 40px 14px 40px;}
 .pagenav .right a {padding:14px 40px 14px 40px;}
 
-.pagenav .left a:hover {box-shadow:-1px 1px 1px 0px #3E4E4C; border-top:2px solid #3E4E4C;}
-.pagenav .right a:hover {box-shadow:1px 1px 1px 0px #3E4E4C; border-top:2px solid #3E4E4C;}
+.pagenav .left a:hover {box-shadow:-1px 1px 1px 0px #3E4E4C;}
+.pagenav .right a:hover {box-shadow:1px 1px 1px 0px #3E4E4C;}
 
 .left {
   margin-left:0px;
@@ -117,9 +118,18 @@ a:hover   { color: #fff; }
 
 /*.posts, .post {padding-top:10px;}*/
 
+#index {
+  width:40em;
+  margin:0px auto;
+}
+
+#intro {
+  background:#111;
+  margin:20px 0px 30px;
+}
+
 .posts {
   list-style-type: none;
-  width:40em;
   margin:0px auto;
 }
 
