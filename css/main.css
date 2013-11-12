@@ -190,6 +190,13 @@ a:hover   { color: #fff; }
 
 #container {
   text-align: left;
+  width: 40em;
+  margin: 1.5em auto 1em;
+  padding-bottom:30px;
+}
+
+#container_post {
+  text-align: left;
   width: 900px;
   margin: 1.5em auto 1em;
   padding-bottom:30px;
@@ -197,9 +204,10 @@ a:hover   { color: #fff; }
 
 .header {
   clear:both;
-  text-align:left;
-  padding: 10px 15px 43px 15px;
+  margin:0px auto;
+  padding: 10px 5px 43px 5px;
   line-height:1.2em;
+  vertical-align: bottom;
 }
 
 .header h1 {
