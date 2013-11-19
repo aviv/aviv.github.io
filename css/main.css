@@ -14,7 +14,7 @@ html, body {height: 100%;}
 
 body {
   background-color: #536160;
-  color:#ddd;
+  color:#fff;
   font-family: "Droid Sans Mono", Monaco, Courier, monospace;
   padding-bottom:50px;
   font-wieght:400;
@@ -74,7 +74,7 @@ a:hover   { color: #fff; }
 
 .pagenav a {
   text-decoration:none;
-  color:#ddd;
+  color:#eee;
   font-family:verdana;
   font-size:130%;
 }
@@ -175,7 +175,6 @@ a:hover   { color: #fff; }
 .content p {
   margin:0px;
   padding-bottom:20px;
-  color:#eee;
 }
 
 /*****************************************************************************/
