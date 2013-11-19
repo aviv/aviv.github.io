@@ -137,7 +137,7 @@ a:hover   { color: #fff; }
 }
 
 .posts li {
-  line-height:1.4em;
+  line-height:1.5em;
   font-size:16px;
   margin:20px 0px 30px 0px;
 }
@@ -226,11 +226,6 @@ a:hover   { color: #fff; }
 /*
 /*****************************************************************************/
 
-.post {
-  font-size:18px;
-  line-height:1.3em;
-}
-
 h2.title {
   font-size:20px;
 }
@@ -238,21 +233,6 @@ h2.title {
 h2.title a {
   /*border-left:1px solid #bbb;*/
 }
-
-.post .content, .post .pheader {
-  padding-top:8px;
-  padding-left:10px;
-}
-
-.post .content {
-  padding-bottom:5px;
-}
-
-.post .date {
-  font-size:70%;
-}
-
-.post p br {width:100px; border:1px solid #000; display:block;}
 
 /* standard */
 .post pre {
