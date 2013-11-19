@@ -1,13 +1,17 @@
 ---
 layout: default
 ---
-<div class='post'>
+
+<ul class="posts">
+
+<li>
   <div class='pheader'>
     <div class='date'><!--{{ page.date | date: "%m/%d/%y"}}--></div>
     <h2 class='title'>{{ page.title }}</h2>
   </div>
-  <div class='content'>{{ content | replace:'  ','&nbsp;&nbsp;' }}</div>
-</div>
+  <div class='content'>{{ content | replace:'  ','&nbsp;&nbsp;' }}</div></li>
+  </ul>
+
 <div class='pagenav'>
   <div class='left'>
     {% if page.previous.url %} 

@@ -10,24 +10,22 @@
   padding: 0;
 }
 
-html, body { height: 100%; }
+html, body {height: 100%;}
 
 body {
   background-color: #536160;
   color:#ddd;
-  font-family: Monaco, Courier, monospace;
+  font-family: "Droid Sans Mono", Monaco, Courier, monospace;
   padding-bottom:50px;
+  font-wieght:400;
 }
 
-h1, h2, h3, h4, h5, h6 {font-size: 100%; font-family: Verdana, "Bitstream Vera Sans", sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%; font-weight:400;}
 
 h1 {
   padding-bottom: 1em; 
-  font-variant:small-caps;
-  font-size:28px;
+  font-size:32px;
 }
-
-h2 {font-variant:small-caps;}
 
 a         { color: #fff; }
 a:hover   { color: #fff; }
@@ -77,10 +75,8 @@ a:hover   { color: #fff; }
 .pagenav a {
   text-decoration:none;
   color:#ddd;
-  font-family:times;
-  font-size:13pt;
-  /*font-size:150%;*/
-  /*padding:1px 4px;*/
+  font-family:verdana;
+  font-size:130%;
 }
 
 .pagenav a:hover {
@@ -88,7 +84,7 @@ a:hover   { color: #fff; }
 }
 
 .pagenav .left, .pagenav .right {
-  margin-top:20px;
+  margin-top:0px;
   padding-bottom:10px;
 }
 
@@ -119,7 +115,7 @@ a:hover   { color: #fff; }
 /*.posts, .post {padding-top:10px;}*/
 
 #index {
-  width:40em;
+  /*width:50em;*/
   margin:0px auto;
 }
 
@@ -142,7 +138,7 @@ a:hover   { color: #fff; }
 
 .posts li {
   line-height:1.4em;
-  font-size:14px;
+  font-size:16px;
   margin:20px 0px 30px 0px;
 }
 
@@ -190,7 +186,8 @@ a:hover   { color: #fff; }
 
 #container {
   text-align: left;
-  width: 40em;
+  width: 90%;
+  max-width:750px;
   margin: 1.5em auto 1em;
   padding-bottom:30px;
 }
@@ -235,9 +232,12 @@ a:hover   { color: #fff; }
   line-height:1.3em;
 }
 
-.post h2 {
-  font-weight:bold;
-  font-size:130%;
+h2.title {
+  font-size:20px;
+}
+
+h2.title a {
+  /*border-left:1px solid #bbb;*/
 }
 
 .post .content, .post .pheader {
