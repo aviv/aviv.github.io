@@ -1,0 +1,25 @@
+body {
+  font-size:14px;
+}
+
+.container-fluid {
+
+}
+
+.poem {
+
+}
+  .poem-header {
+    text-align:center;
+  }
+  .poem-main {
+
+  }
+    .poem-main span {
+      margin-left:-8px;
+      /*border-left:4px solid #ccc;*/
+      /*padding-left:4px;*/
+    }
+  .poem-footer {
+
+  }
