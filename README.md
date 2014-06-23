@@ -1,4 +1,4 @@
 avivnitsan.com
 ===============
 
-()[http://avivnitsan.com]
+http://avivnitsan.com
