@@ -4,138 +4,166 @@
   <title>Data Visualization</title>
   <script src="Chart.min.js"></script>
   <style type="text/css">
-    .chart {clear: both;}
-    canvas {padding: 1rem; float: left;}
+    body {
+      color: #444;
+      font-weight: 400;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container {
+      margin: 0px auto;
+      text-align: center;
+      width: 80%;
+    }
+    h1 {
+      text-transform: uppercase;
+      font-size: 32px;
+      font-weight: 500;
+      margin-top: 50px;
+    }
+    .hint {
+      font-size: 16px;
+      color: #888;
+      text-transform: uppercase;
+    }
+    .chart {
+    }
+    canvas {
+      padding: 1rem;
+    }
     .legend {
-      float: left;
     }
     .legend ul {
       list-style-type: none;
     }
     .legend ul li {
-      margin: 3px;
-      padding: 3px;
+      display: inline-block;
     }
     .legend span {
-      padding: 3px;
+      padding: 5px;
+      margin: 0 5px;
     }
   </style>
 </head>
 <body>
+  <div class='container'>
+    <div class='chart'>
+      <h1>Total businesses registered by city monthly</h1>
+      <canvas id="chart1" width="400" height="400"></canvas>
+      <div class='legend' id='chart1_legend'></div>
+    </div>
 
-<div class='chart'>
-  <h2>Total businesses registered by city monthly</h2>
-  <canvas id="chart1" width="400" height="400"></canvas>
-  <div class='legend' id='chart1_legend'></div>
-</div>
+    <div class='chart'>
+      <h1>Businesses by gender</h1>
+      <canvas id="chart2" width="300" height="300"></canvas>
+    </div>
 
-<div class='chart'>
-  <h2>Businesses by gender</h2>
-  <canvas id="chart2" width="300" height="300"></canvas>
-</div>
+    <div class='chart'>
+      <h1>Businesses by scope</h1>
+      <p class='hint'>Hover over the graphic to see the region and amount</p>
+      <!-- <div class='legend' id='chart3_legend'></div> -->
+      <canvas id="chart3" width="300" height="300"></canvas>
+    </div>
+  </div>
 
-<div class='chart'>
-  <h2>Businesses by scope</h2>
-  <canvas id="chart3" width="300" height="300"></canvas>
-  <div class='legend' id='chart3_legend'></div>
-</div>
+  <script type="text/javascript">
+    options1 = {
+      scaleShowGridLines: false,
+      barShowStroke: false,
+      legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"><%if(datasets[i].label){%><%=datasets[i].label%><%}%></span></li><%}%></ul>"
+    }
+    data1 = {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [
+        {
+          label: 'Filipino',
+          fillColor: "#EB7878",
+          strokeColor: "#2285C5",
+          highlightFill: "#EB7878",
+          highlightStroke: "#2285C5",
+          data: [65, 59, 80, 81, 56, 55, 40, 38, 20, 70, 82, 67]
+        },
+        {
+          label: 'Unknown',
+          fillColor: "#FBCEAB",
+          strokeColor: "#FF9E1D",
+          highlightFill: "#FBCEAB",
+          highlightStroke: "#FF9E1D",
+          data: [20, 15, 60, 72, 54, 71, 28, 18, 32, 64, 12, 13]
+        }
+      ]
+    }
+    var context1 = document.getElementById("chart1").getContext("2d")
+    var chart1 = new Chart(context1).Bar(data1, options1)
+    document.getElementById('chart1_legend').innerHTML = chart1.generateLegend()
 
-<script type="text/javascript">
-  options1 = {
-    scaleShowGridLines: false,
-    barShowStroke: false,
-    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"><%if(datasets[i].label){%><%=datasets[i].label%><%}%></span></li><%}%></ul>"
-  }
-  data1 = {
-    labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-    datasets: [
+    options2 = {
+      scaleShowGridLines: false,
+      barShowStroke: false,
+      tooltipTemplate: "<%= label %> - <%= value %>%",
+      animationSteps: 50,
+      onAnimationComplete: function()
       {
-        label: 'Filipino',
-        fillColor: "#2285C5",
-        strokeColor: "#2285C5",
-        highlightFill: "#2285C5",
-        highlightStroke: "#2285C5",
-        data: [65, 59, 80, 81, 56, 55, 40, 38, 20, 70, 82, 67]
+          this.showTooltip(this.segments, true)
+      },
+      tooltipEvents: [],
+      showTooltips: true,
+      tooltipFillColor: '#fff',
+      tooltipFontColor: "#444",
+      tooltipCornerRadius: 0
+    }
+    data2 = [
+      {
+        value: 70.3,
+        color: '#C7C8A7',
+        label: 'Male'
       },
       {
-        label: 'Unknown',
-        fillColor: "#FF9E1D",
-        strokeColor: "#FF9E1D",
-        highlightFill: "#FF9E1D",
-        highlightStroke: "#FF9E1D",
-        data: [20, 15, 60, 72, 54, 71, 28, 18, 32, 64, 12, 13]
+        value: 29.7,
+        color: '#81B09B',
+        label: 'Female'
       }
     ]
-  }
-  var context1 = document.getElementById("chart1").getContext("2d")
-  var chart1 = new Chart(context1).Bar(data1, options1)
-  document.getElementById('chart1_legend').innerHTML = chart1.generateLegend()
+    var context2 = document.getElementById("chart2").getContext("2d")
+    var chart2 = new Chart(context2).Doughnut(data2, options2)
 
-  options2 = {
-    scaleShowGridLines: false,
-    barShowStroke: false,
-    tooltipTemplate: "<%= label %> - <%= value %>%",
-    animationSteps: 50,
-    onAnimationComplete: function()
-    {
-        this.showTooltip(this.segments, true)
-    },
-    tooltipEvents: [],
-    showTooltips: true
-  }
-  data2 = [
-    {
-      value: 70.3,
-      color: '#1984C7',
-      label: 'Male'
-    },
-    {
-      value: 29.7,
-      color: '#FF9E1D',
-      label: 'Female'
+    options3 = {
+      scaleShowGridLines: false,
+      barShowStroke: false,
+      tooltipTemplate: "<%= label %> - <%= value %>",
+      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"><%if(segments[i].label){%><%=segments[i].label%><%}%></span></li><%}%></ul>",
+      tooltipFillColor: '#fff',
+      tooltipFontColor: "#444",
+      tooltipCornerRadius: 0
     }
-  ]
-  var context2 = document.getElementById("chart2").getContext("2d")
-  var chart2 = new Chart(context2).Doughnut(data2, options2)
-
-  options3 = {
-    scaleShowGridLines: false,
-    barShowStroke: false,
-    tooltipTemplate: "<%= label %> - <%= value %>",
-    // showTooltips: false,
-    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"><%if(segments[i].label){%><%=segments[i].label%><%}%></span></li><%}%></ul>"
-  }
-  data3 = [
-    {
-      value: 162,
-      color: '#1984C7',
-      label: 'Region 1: Ilocos'
-    },
-    {
-      value: 41,
-      color: '#FF9E1D',
-      label: 'Region 2: Cagayan Valley'
-    },
-    {
-      value: 96,
-      color: '#FACEA7',
-      label: 'Region 3: Central Luzon'
-    },
-    {
-      value: 26,
-      color: '#C8C8A6',
-      label: 'Region 4A: Calabarzon'
-    },
-    {
-      value: 83,
-      color: '#ED7976',
-      label: 'National Capital Region (NCR)'
-    }
-  ]
-  var context3 = document.getElementById("chart3").getContext("2d")
-  var chart3 = new Chart(context3).Doughnut(data3, options3)
-  document.getElementById('chart3_legend').innerHTML = chart3.generateLegend()
-</script>
-
+    data3 = [
+      {
+        value: 162,
+        color: '#FCCEAC',
+        label: 'Region 1: Ilocos'
+      },
+      {
+        value: 41,
+        color: '#EC7878',
+        label: 'Region 2: Cagayan Valley'
+      },
+      {
+        value: 96,
+        color: '#F69C99',
+        label: 'Region 3: Central Luzon'
+      },
+      {
+        value: 26,
+        color: '#C6C8A6',
+        label: 'Region 4A: Calabarzon'
+      },
+      {
+        value: 83,
+        color: '#81B09C',
+        label: 'National Capital Region (NCR)'
+      }
+    ]
+    var context3 = document.getElementById("chart3").getContext("2d")
+    var chart3 = new Chart(context3).Doughnut(data3, options3)
+  </script>
 </body>
 </html>
