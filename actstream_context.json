@@ -10,7 +10,7 @@
       "type": "string"
     },
     "primary_object_id": {
-      "type": "string"
+      "type": "integer"
     },
     "secondary_object_type": {
       "type": "string"
@@ -19,7 +19,7 @@
       "type": "string"
     },
     "secondary_object_id": {
-      "type": "string"
+      "type": "integer"
     },
     "verb": {
       "type": "string"
