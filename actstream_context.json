@@ -3,23 +3,23 @@
   "title": "actstream_context",
   "description": "A snowplow/actstream schema",
   "properties": {
-    "primary_object_type": {
-      "type": "string"
-    },
-    "primary_object_app_label": {
-      "type": "string"
-    },
-    "primary_object_id": {
+    "target_content_type_id": {
       "type": "integer"
     },
-    "secondary_object_type": {
+    "target_object_id": {
       "type": "string"
     },
-    "secondary_object_app_label": {
-      "type": "string"
-    },
-    "secondary_object_id": {
+    "action_object_content_type_id": {
       "type": "integer"
+    },
+    "action_object_object_id": {
+      "type": "string"
+    },
+    "actor_content_type_id": {
+      "type": "integer"
+    },
+    "actor_object_id": {
+      "type": "string"
     },
     "verb": {
       "type": "string"
