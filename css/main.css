@@ -9,3 +9,8 @@
 .img-col img {
   max-width: 100%;
 }
+
+img.me {
+  width: 300px;
+  margin-bottom: 20px;
+}
